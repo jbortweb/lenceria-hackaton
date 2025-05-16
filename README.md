@@ -22,16 +22,16 @@ Puedes acceder a la demo del proyecto en el siguiente enlace:
 ## Capturas de Pantalla
 
 ### Página Principal
-
-![Página Principal](https://via.placeholder.com/800x400?text=Captura+de+Pantalla+1)
+![categorias](https://github.com/user-attachments/assets/2dc87f11-511c-4a3d-9944-815649df0869)
 
 ### Detalles del Producto
 
-![Detalles del Producto](https://via.placeholder.com/800x400?text=Captura+de+Pantalla+2)
+![producto](https://github.com/user-attachments/assets/f0fa19e8-2089-47a7-9d62-84caa136d163)
+
 
 ### Inicio de Sesión con Clerk
 
-![Inicio de Sesión](https://via.placeholder.com/800x400?text=Captura+de+Pantalla+3)
+![login](https://github.com/user-attachments/assets/ef24dc76-eee1-4edb-a627-237da62865af)
 
 ## Uso de Clerk
 
