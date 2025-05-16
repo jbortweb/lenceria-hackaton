@@ -40,45 +40,17 @@ Puedes acceder a la demo del proyecto en el siguiente enlace:
 
 Clerk se ha utilizado para gestionar la autenticación de usuarios en este proyecto. Las principales funcionalidades implementadas con Clerk incluyen:
 
-- **Inicio de sesión y registro**: Los usuarios pueden registrarse o iniciar sesión utilizando su correo electrónico o número de teléfono.
-- **Gestión de sesiones**: Clerk asegura que las sesiones de los usuarios sean seguras y persistentes.
+- **Inicio de sesión**: Los administradores puede iniciar sesión utilizando su correo electrónico o la cuenta de Google y Github.
+- **Gestión de sesiones**: Clerk asegura que la sesion de los administradores sean seguras y persistentes.
 - **Protección de rutas**: Se han protegido rutas específicas, como las páginas de administración, para que solo los usuarios autenticados puedan acceder a ellas.
 - **Localización**: Clerk se ha configurado para mostrar mensajes y formularios en español.
-
-### Configuración de Clerk
-
-En el archivo `.env`, se han configurado las claves necesarias para Clerk:
-
-```env
-NUXT_PUBLIC_CLERK_PUBLISHABLE_KEY=tu_clave_publica
-NUXT_CLERK_SECRET_KEY=tu_clave_secreta
-```
-
-En el middleware `clerk.ts`, se ha integrado Clerk para proteger rutas específicas:
-
-```typescript
-// filepath: /home/vant/Escritorio/proyectos/hackaton/hackaton/server/middleware/clerk.ts
-import { clerkMiddleware } from '@clerk/nuxt/server'
-
-export default clerkMiddleware((event) => {
-  const { userId } = event.context.auth()
-  const isAdminRoute = event.path.startsWith('/admin')
-
-  if (!userId && isAdminRoute) {
-    throw createError({
-      statusCode: 401,
-      statusMessage: 'Unauthorized: User not signed in',
-    })
-  }
-})
-```
 
 ## Instalación y Configuración
 
 1. Clona este repositorio:
 
    ```bash
-   git clone https://github.com/tu-usuario/hackathon-tienda.git
+   git clone https://github.com/jbortweb/lenceria-hackaton.git
    cd hackathon-tienda
    ```
 
@@ -88,7 +60,7 @@ export default clerkMiddleware((event) => {
    npm install
    ```
 
-3. Configura las claves de Clerk en un archivo `.env` como se muestra anteriormente.
+3. Configura las claves de Clerk en un archivo `.env`.
 
 4. Inicia el servidor de desarrollo:
 
