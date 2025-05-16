@@ -1,10 +1,10 @@
 # Hackathon Project - Tienda de Ropa y Complementos
 
-Este proyecto es una tienda en línea que ofrece una amplia variedad de ropa íntima, calcetines, tops, camisetas y más. Está diseñado para proporcionar una experiencia de usuario fluida y moderna, utilizando tecnologías como Nuxt.js y Clerk para la autenticación.
+Este proyecto es una tienda en línea que ofrece una amplia variedad de ropa íntima, calcetines, tops, camisetas y más. Está diseñado para proporcionar una experiencia de usuario fluida y moderna, utilizando tecnologías como Nuxt.js, Tailwind y Clerk para la autenticación.
 
 ## Descripción del Proyecto
 
-La tienda permite a los usuarios explorar diferentes categorías de productos, ver detalles de cada artículo y gestionar su cuenta de usuario. Clerk se ha integrado para manejar la autenticación de usuarios, proporcionando un inicio de sesión seguro y una experiencia personalizada.
+La tienda permite a los usuarios explorar diferentes categorías de productos, ver detalles de cada artículo y poder elegir los productos para realizar un pedido. Clerk se ha integrado para manejar la autenticación de usuarios, proporcionando un inicio de sesión seguro y una experiencia personalizada.
 
 ### Características principales:
 
@@ -17,65 +17,41 @@ La tienda permite a los usuarios explorar diferentes categorías de productos, v
 
 Puedes acceder a la demo del proyecto en el siguiente enlace:
 
-[Demo del Proyecto](https://demo-tienda-hackathon.com)
+[Demo del Proyecto](https://lenceria-hackaton.netlify.app/)
 
 ## Capturas de Pantalla
 
-### Página Principal
+### Categorías
 
-![Página Principal](https://via.placeholder.com/800x400?text=Captura+de+Pantalla+1)
+![categorias](https://github.com/user-attachments/assets/2dc87f11-511c-4a3d-9944-815649df0869)
 
 ### Detalles del Producto
 
-![Detalles del Producto](https://via.placeholder.com/800x400?text=Captura+de+Pantalla+2)
+![producto](https://github.com/user-attachments/assets/f0fa19e8-2089-47a7-9d62-84caa136d163)
 
 ### Inicio de Sesión con Clerk
 
-![Inicio de Sesión](https://via.placeholder.com/800x400?text=Captura+de+Pantalla+3)
+![login](https://github.com/user-attachments/assets/ef24dc76-eee1-4edb-a627-237da62865af)
+
+### Carousel
+
+![carousel](https://github.com/user-attachments/assets/7d535fea-80ee-4b22-a9a1-a9b472c26f94)
 
 ## Uso de Clerk
 
 Clerk se ha utilizado para gestionar la autenticación de usuarios en este proyecto. Las principales funcionalidades implementadas con Clerk incluyen:
 
-- **Inicio de sesión y registro**: Los usuarios pueden registrarse o iniciar sesión utilizando su correo electrónico o número de teléfono.
-- **Gestión de sesiones**: Clerk asegura que las sesiones de los usuarios sean seguras y persistentes.
+- **Inicio de sesión**: Los administradores puede iniciar sesión utilizando su correo electrónico o la cuenta de Google y Github.
+- **Gestión de sesiones**: Clerk asegura que la sesion de los administradores sean seguras y persistentes.
 - **Protección de rutas**: Se han protegido rutas específicas, como las páginas de administración, para que solo los usuarios autenticados puedan acceder a ellas.
 - **Localización**: Clerk se ha configurado para mostrar mensajes y formularios en español.
-
-### Configuración de Clerk
-
-En el archivo `.env`, se han configurado las claves necesarias para Clerk:
-
-```env
-NUXT_PUBLIC_CLERK_PUBLISHABLE_KEY=tu_clave_publica
-NUXT_CLERK_SECRET_KEY=tu_clave_secreta
-```
-
-En el middleware `clerk.ts`, se ha integrado Clerk para proteger rutas específicas:
-
-```typescript
-// filepath: /home/vant/Escritorio/proyectos/hackaton/hackaton/server/middleware/clerk.ts
-import { clerkMiddleware } from '@clerk/nuxt/server'
-
-export default clerkMiddleware((event) => {
-  const { userId } = event.context.auth()
-  const isAdminRoute = event.path.startsWith('/admin')
-
-  if (!userId && isAdminRoute) {
-    throw createError({
-      statusCode: 401,
-      statusMessage: 'Unauthorized: User not signed in',
-    })
-  }
-})
-```
 
 ## Instalación y Configuración
 
 1. Clona este repositorio:
 
    ```bash
-   git clone https://github.com/tu-usuario/hackathon-tienda.git
+   git clone https://github.com/jbortweb/lenceria-hackaton.git
    cd hackathon-tienda
    ```
 
@@ -85,7 +61,7 @@ export default clerkMiddleware((event) => {
    npm install
    ```
 
-3. Configura las claves de Clerk en un archivo `.env` como se muestra anteriormente.
+3. Configura las claves de Clerk en un archivo `.env`.
 
 4. Inicia el servidor de desarrollo:
 
